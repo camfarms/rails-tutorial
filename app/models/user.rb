@@ -21,4 +21,8 @@ class User < ApplicationRecord
 			nil
 		end
 	end
+
+	def send_welcome
+		ApplicationMailer.mail_welcome(self.email).deliver
+	end
 end
